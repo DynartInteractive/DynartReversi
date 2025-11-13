@@ -163,7 +163,7 @@ public class Game extends Scene {
 
         if (event.getAction() != MotionEvent.ACTION_UP)
         {
-            invalidate();
+            //invalidate();
             return true;
         }
 

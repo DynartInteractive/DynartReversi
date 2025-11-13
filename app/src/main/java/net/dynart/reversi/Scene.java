@@ -364,15 +364,15 @@ public class Scene extends View {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN)
         {
-            down.x = (int)(event.getRawX() * 1/pixel_ratio) - (int)getOffsetX();
-            down.y = (int)(event.getRawY() * 1/pixel_ratio);
+            down.x = (int)(event.getX() / pixel_ratio) - (int)getOffsetX();
+            down.y = (int)(event.getY() / pixel_ratio);
 
             buttonsSetTransparent();
         }
         else if (event.getAction() == MotionEvent.ACTION_UP)
         {
-            up.x = (int)(event.getRawX() * 1/pixel_ratio) - (int)getOffsetX();
-            up.y = (int)(event.getRawY() * 1/pixel_ratio);
+            up.x = (int)(event.getX() / pixel_ratio) - (int)getOffsetX();
+            up.y = (int)(event.getY() / pixel_ratio);
 
             buttonsTransparent();
         }
