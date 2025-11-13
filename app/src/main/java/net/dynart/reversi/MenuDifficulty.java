@@ -38,17 +38,17 @@ public class MenuDifficulty extends Scene {
 
         if (but_easy.isClicked(down, up))
         {
-            Board.maxRunDepth = 1;
+            BoardNative.maxRunDepth = 1;
             clicked = true;
         }
         else if (but_medium.isClicked(down, up))
         {
-            Board.maxRunDepth = 3;
+            BoardNative.maxRunDepth = 3;
             clicked = true;
         }
         else if (but_hard.isClicked(down, up))
         {
-            Board.maxRunDepth = 5;
+            BoardNative.maxRunDepth = 5;
             clicked = true;
         }
 

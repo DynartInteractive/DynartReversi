@@ -1,6 +1,6 @@
 package net.dynart.reversi;
 
-import net.dynart.reversi.Board.GameResult;
+import net.dynart.reversi.BoardNative.GameResult;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
@@ -94,20 +94,20 @@ public class Game extends Scene {
         count = new Integer(board.getDarkPiecesCount());
         drawText(canvas, count.toString(), 512 + 55, 140 + 13, 20, 255);
 
-        if (board.getGameResult() == GameResult.DRAW)
+        if (board.getGameResultEnum() == GameResult.DRAW)
         {
             drawBoardMsg(canvas, "Draw");
         }
-        else if (board.getGameResult() == GameResult.DARK_WINS)
+        else if (board.getGameResultEnum() == GameResult.DARK_WINS)
         {
             drawBoardMsg(canvas, "Black wins!");
         }
-        else if (board.getGameResult() == GameResult.LIGHT_WINS)
+        else if (board.getGameResultEnum() == GameResult.LIGHT_WINS)
         {
             drawBoardMsg(canvas, "White wins!");
         }
 
-        if (board.getGameResult() != GameResult.UNKNOWN)
+        if (board.getGameResultEnum() != GameResult.UNKNOWN)
         {
             if (!end)
             {
@@ -121,7 +121,7 @@ public class Game extends Scene {
 
         // update (silly, but works :)
 
-        if (((!board.isDark() && cpu == Board.PIECE_LIGHT) || (board.isDark() && cpu == Board.PIECE_DARK)) && board.getGameResult() == GameResult.UNKNOWN)
+        if (((!board.isDark() && cpu == BoardNative.PIECE_LIGHT) || (board.isDark() && cpu == BoardNative.PIECE_DARK)) && board.getGameResultEnum() == GameResult.UNKNOWN)
         {
             drawBoardMsg(canvas, "Thinking...");
 
@@ -170,7 +170,7 @@ public class Game extends Scene {
         // board events
         if (!msg_show && up.x > 15 && up.y > 27 && up.x < 440 && up.y < 452 &&
                 down.x > 15 && down.y > 27 && down.x < 440 && down.y < 452 &&
-                ((board.isDark() && cpu == Board.PIECE_LIGHT) || (!board.isDark() && cpu == Board.PIECE_DARK) || cpu == Board.PIECE_EMPTY))
+                ((board.isDark() && cpu == BoardNative.PIECE_LIGHT) || (!board.isDark() && cpu == BoardNative.PIECE_DARK) || cpu == BoardNative.PIECE_EMPTY))
         {
             up.x -= 15;
             up.y -= 27;

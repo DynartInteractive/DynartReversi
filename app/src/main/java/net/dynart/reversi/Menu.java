@@ -47,7 +47,7 @@ public class Menu extends Scene {
             playSound(sound_menu);
 
             Main main = (Main)getContext();
-            main.game.start(Board.PIECE_EMPTY);
+            main.game.start(BoardNative.PIECE_EMPTY);
             main.setScene(main.game);
         }
         else if (but_sound.isClicked(down, up))

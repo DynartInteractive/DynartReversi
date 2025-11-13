@@ -35,11 +35,11 @@ public class MenuColor extends Scene {
 
         if (but_black.isClicked(down, up))
         {
-            cpu = Board.PIECE_LIGHT;
+            cpu = BoardNative.PIECE_LIGHT;
         }
         else if (but_white.isClicked(down, up))
         {
-            cpu = Board.PIECE_DARK;
+            cpu = BoardNative.PIECE_DARK;
         }
 
         if (cpu != 0)

@@ -49,7 +49,7 @@ public class Main extends AppCompatActivity {
 
         // start
         game = new Game(this);
-        game.start(Board.PIECE_EMPTY);
+        game.start(BoardNative.PIECE_EMPTY);
 
         menu = new Menu(this);
         menu_difficulty = new MenuDifficulty(this);

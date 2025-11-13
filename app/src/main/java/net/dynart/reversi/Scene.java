@@ -74,7 +74,7 @@ public class Scene extends View {
     protected Typeface typeface;
 
     // board
-    protected static Board board;
+    protected static BoardNative board;
 
 
     public static void init(int w, int h)
@@ -221,7 +221,7 @@ public class Scene extends View {
         buttons.add(msg_but_ok);
         buttons.add(msg_but_cancel);
 
-        board = new Board();
+        board = new BoardNative();
         board.setStartPosition();
 
     }
@@ -269,9 +269,9 @@ public class Scene extends View {
             {
                 piece = board.getPiece(i,  j);
 
-                if (piece == Board.PIECE_EMPTY) continue;
+                if (piece == BoardNative.PIECE_EMPTY) continue;
 
-                drawBitmap(canvas, piece == Board.PIECE_LIGHT ? Scene.white : Scene.black, getDiscRectF(i, j));
+                drawBitmap(canvas, piece == BoardNative.PIECE_LIGHT ? Scene.white : Scene.black, getDiscRectF(i, j));
             }
         }
     }
