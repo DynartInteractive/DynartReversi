@@ -16,3 +16,7 @@ local.properties
 
 # Signing keystore
 /DynartReversi
+
+# Signed release bundles
+/app/release/
+*.aab
