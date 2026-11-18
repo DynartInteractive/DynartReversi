@@ -7,13 +7,9 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import android.app.Activity;
 
-public class Main extends AppCompatActivity {
+public class Main extends Activity {
 
 
     public Game game;
@@ -56,8 +52,6 @@ public class Main extends AppCompatActivity {
         menu_color = new MenuColor(this);
 
         //logo = new Logo(this);
-
-        EdgeToEdge.enable(this);
 
         setScene(menu);
     }
